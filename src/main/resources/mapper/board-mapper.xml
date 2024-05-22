@@ -53,7 +53,7 @@
 		update board_tbl set board_title=#{boardTitle}, board_content=#{boardContent} where board_no=#{boardNo} 	
 	</update>
 	
-	<select id="selectDelFileList">
+	<select id="selectDelFileList" resultType="boardFile">
 		select * from board_file_tbl where board_file_no in
 		<foreach collection="array" item="boardFileNo" open="(" close=")" separator=",">
 			#{boardFileNo}
